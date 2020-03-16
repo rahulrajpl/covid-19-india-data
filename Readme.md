@@ -2,6 +2,7 @@
 
 This repo contains data forked from https://github.com/imdevskp/covid-19-india-data 
 
-Hans Rosling style analytics will be done on various aspects on Covid-19 will be uploaded here. Index to them are as follows :-
+Index to various timeseries analytics are as follows :-
 
-- LineChart on No of cases reported [here](#)
+- LineChart on No of cases reported [here](http://randomwalk.in/covid-19-india-data/16Mar/) (Status: Completed)
+- Bubble Chart on Total reported vs Total recoved [here]() (Status: In Progress)
