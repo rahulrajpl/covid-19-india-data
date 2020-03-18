@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>Gapminder Offline export</title>
+    <title>Covid-19 India</title>
     <link href="libs/vizabi.css" rel="stylesheet" type="text/css" >
     <link href="libs/bubblechart.css" rel="stylesheet" type="text/css">
     <link href="libs/bubblemap.css" rel="stylesheet" type="text/css">
@@ -23,14 +23,12 @@
   </head>
 
   <body style="width: 70%; max-width: 900px; height: 100%; margin: 0 auto; font-family: 'Arial';">
-
-
-    <div id="placeholder" style="width: 100%; height: 600px;"></div>
-    <p>Data Updated as on 18 Mar</p>
-
-    <p>
-      <a href="randomwalk.in/covid19India">Home</a>
-    </p>
+  
+	<div id="placeholder" style="width: 100%; height: 600px;"></div>
+  <p>Data Updated as on 18 Mar</p>
+  <p>
+    <a href="randomwalk.in/covid19India">Home</a>
+  </p>
     <script src="config.js"></script>
     <script>
 
@@ -39,10 +37,8 @@
       Vizabi.Reader.extend("ext-csv", CsvReader.csvReaderObject);
       Vizabi.Reader.extend("excel", ExcelReader.excelReaderObject);
 
-      var viz = Vizabi('LineChart', document.getElementById('placeholder'), CONFIG);
+      var viz = Vizabi('BubbleChart', document.getElementById('placeholder'), CONFIG);
 
     </script>
-
-    
   </body>
 </html>

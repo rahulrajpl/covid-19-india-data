@@ -1,8 +1,8 @@
 var CONFIG = {
  "data": {
-  "_lastModified": 1584513844690,
+  "_lastModified": 1584512031566,
   "hasNameColumn": false,
-  "lastModified": 1584513844690,
+  "lastModified": 1584512031566,
   "nameColumnPosition": 0,
   "noCache": true,
   "path": "./data/complete_modified_date.csv",
@@ -49,32 +49,15 @@ var CONFIG = {
    "axis_x": {
     "allow": {
      "scales": [
-      "time"
+      "linear",
+      "log",
+      "genericLog",
+      "time",
+      "pow"
      ]
     },
     "autoconfig": {
      "index": 0,
-     "type": "time"
-    },
-    "data": "data",
-    "domainMax": null,
-    "domainMin": null,
-    "fixBaseline": null,
-    "scaleType": "time",
-    "syncModels": [],
-    "use": "indicator",
-    "which": "Date",
-    "zoomedMax": null,
-    "zoomedMin": null
-   },
-   "axis_y": {
-    "allow": {
-     "scales": [
-      "linear",
-      "log"
-     ]
-    },
-    "autoconfig": {
      "type": "measure"
     },
     "data": "data",
@@ -85,6 +68,32 @@ var CONFIG = {
     "syncModels": [],
     "use": "indicator",
     "which": "Total Confirmed cases (Indian National)",
+    "zoomedMax": null,
+    "zoomedMin": null
+   },
+   "axis_y": {
+    "allow": {
+     "scales": [
+      "linear",
+      "log",
+      "genericLog",
+      "time",
+      "pow"
+     ]
+    },
+    "autoconfig": {
+     "index": 1,
+     "type": "measure"
+    },
+    "data": "data",
+    "domainMax": null,
+    "domainMin": null,
+    "fixBaseline": null,
+    "scaleType": "linear",
+    "spaceRef": null,
+    "syncModels": [],
+    "use": "indicator",
+    "which": "Cured/Discharged",
     "zoomedMax": null,
     "zoomedMin": null
    },
@@ -143,8 +152,117 @@ var CONFIG = {
    "limit": 5000,
    "opacityHighlightDim": 0.1,
    "opacityRegular": 1,
-   "opacitySelectDim": 0.3,
-   "select": [],
+   "opacitySelectDim": 1,
+   "select": [
+    {
+     "Name of State / UT": "West Bengal"
+    },
+    {
+     "Name of State / UT": "Uttarakhand"
+    },
+    {
+     "Name of State / UT": "Union Territory of Ladakh"
+    },
+    {
+     "Name of State / UT": "Telengana"
+    },
+    {
+     "Name of State / UT": "Punjab"
+    },
+    {
+     "Name of State / UT": "Maharashtra"
+    },
+    {
+     "Name of State / UT": "Karnataka"
+    },
+    {
+     "Name of State / UT": "Haryana"
+    },
+    {
+     "Name of State / UT": "Delhi"
+    },
+    {
+     "Name of State / UT": "Union Territory of Jammu and Kashmir"
+    },
+    {
+     "Name of State / UT": "Tamil Nadu"
+    },
+    {
+     "Name of State / UT": "Rajasthan"
+    },
+    {
+     "Name of State / UT": "Odisha"
+    },
+    {
+     "Name of State / UT": "Kerala"
+    },
+    {
+     "Name of State / UT": "Andhra Pradesh"
+    },
+    {
+     "Name of State / UT": "Uttar Pradesh"
+    }
+   ],
+   "size": {
+    "allow": {
+     "scales": [
+      "ordinal",
+      "linear",
+      "log",
+      "genericLog",
+      "pow"
+     ]
+    },
+    "autoconfig": {
+     "index": 2,
+     "type": "measure"
+    },
+    "data": "data",
+    "domainMax": null,
+    "domainMin": null,
+    "extent": [
+     0,
+     0.85
+    ],
+    "fixBaseline": 0,
+    "scaleType": "linear",
+    "spaceRef": null,
+    "syncModels": [],
+    "use": "indicator",
+    "which": "Total Confirmed cases (Indian National)",
+    "zoomedMax": null,
+    "zoomedMin": null
+   },
+   "size_label": {
+    "_important": false,
+    "allow": {
+     "names": [
+      "_default"
+     ],
+     "scales": [
+      "ordinal",
+      "linear",
+      "log",
+      "genericLog",
+      "pow"
+     ]
+    },
+    "data": "data",
+    "domainMax": null,
+    "domainMin": null,
+    "extent": [
+     0.12,
+     0.19
+    ],
+    "fixBaseline": 0,
+    "scaleType": "ordinal",
+    "spaceRef": null,
+    "syncModels": [],
+    "use": "constant",
+    "which": "_default",
+    "zoomedMax": null,
+    "zoomedMin": null
+   },
    "space": [
     "entities",
     "time"
@@ -186,7 +304,7 @@ var CONFIG = {
    "autoconfig": {
     "type": "time"
    },
-   "delay": 150,
+   "delay": 1200,
    "delayThresholdX2": 90,
    "delayThresholdX4": 45,
    "dim": "Date",
@@ -201,7 +319,7 @@ var CONFIG = {
    "immediatePlay": true,
    "loop": false,
    "offset": 0,
-   "pauseBeforeForecast": true,
+   "pauseBeforeForecast": false,
    "playable": true,
    "playing": false,
    "record": false,
@@ -216,29 +334,43 @@ var CONFIG = {
   }
  },
  "ui": {
+  "adaptMinMaxZoom": false,
   "buttons": [
    "colors",
    "find",
+   "zoom",
+   "trails",
+   "lock",
    "moreoptions",
    "presentation",
    "sidebarcollapse",
    "fullscreen"
   ],
   "chart": {
-   "curve": "curveMonotoneX",
+   "decorations": {
+    "enabled": true,
+    "xAxisGroups": null
+   },
    "labels": {
-    "min_number_of_entities_when_values_hide": 2
+    "dragging": true,
+    "removeLabelBox": true
+   },
+   "lockNonSelected": 0,
+   "margin": {
+    "left": 83.82600000000001,
+    "top": 0
    },
    "showForecastOverlay": false,
+   "superhighlightOnMinimapHover": true,
+   "trails": false,
    "whenHovering": {
-    "hideVerticalNow": false,
     "higlightValueX": true,
     "higlightValueY": true,
     "showProjectionLineX": true,
-    "showProjectionLineY": true,
-    "showTooltip": false
+    "showProjectionLineY": true
    }
   },
+  "cursorMode": "arrow",
   "datawarning": {
    "doubtDomain": [],
    "doubtRange": []
@@ -246,15 +378,17 @@ var CONFIG = {
   "dialogs": {
    "dialog": {
     "find": {
-     "enableSelectShowSwitch": false,
-     "panelMode": "show"
+     "enableSelectShowSwitch": false
     }
    },
    "moreoptions": [
     "opacity",
     "speed",
     "axes",
+    "size",
     "colors",
+    "label",
+    "zoom",
     "presentation",
     "technical",
     "about"
@@ -262,16 +396,23 @@ var CONFIG = {
    "popup": [
     "colors",
     "find",
+    "size",
+    "zoom",
     "moreoptions"
    ],
    "sidebar": [
     "colors",
-    "find"
+    "find",
+    "size",
+    "zoom"
    ]
   },
+  "panWithArrow": false,
   "presentation": false,
+  "show_ticks": true,
   "sidebarCollapse": false,
-  "splash": false
+  "splash": false,
+  "zoomOnScrolling": false
  },
- "chartType": "LineChart"
+ "chartType": "BubbleChart"
 };
